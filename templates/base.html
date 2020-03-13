@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vehicle Search</title>
+</head>
+<body>
+  <h1>Enter a vehicle make to search</h1>
+  <div>
+    <form>
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit">Go</button>    
+    </form>
+  </div>
+
+  {% if search_results %}
+    <table border="1" style="margin-top: 20px">
+      <tr>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Price</th>
+      </tr>
+    {% for row in search_results %}
+      <tr>
+        <td align="left">{{ row[0] }}</td>
+        <td align="left">{{ row[1] }}</td>
+        <td align="left">{{ row[2] }}</td>
+      </tr>
+    {% endfor %}
+
+    </table>
+  {% endif %}
+</body>
+</html>
